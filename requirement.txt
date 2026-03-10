@@ -1,0 +1,25 @@
+# Node.js Project Dependencies
+# Note: Node.js typically uses package.json to manage dependencies.
+# This file provides a textual list of the project's requirements for reference.
+
+# Backend Dependencies (portfolio-backend)
+bcryptjs: ^2.4.3
+cors: ^2.8.6
+dotenv: ^16.6.1
+express: ^4.22.1
+express-rate-limit: ^7.5.1
+helmet: ^7.2.0
+jsonwebtoken: ^9.0.3
+node-fetch: ^3.3.2
+pg: ^8.20.0
+
+# Backend Dev Dependencies
+nodemon: ^3.0.2
+
+# Frontend Dependencies (portfolio-frontend)
+react: ^18.2.0
+react-dom: ^18.2.0
+
+# Frontend Dev Dependencies
+@vitejs/plugin-react: ^4.2.1
+vite: ^7.3.1

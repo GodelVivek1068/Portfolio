@@ -392,7 +392,9 @@ function Hero({ dark }) {
         {/* CTA Buttons */}
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "3rem" }}>
           <a
-            href="#"
+            href="/Vivek_Jadhav_Resume .pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               padding: "0.75rem 2rem",
               borderRadius: "8px",

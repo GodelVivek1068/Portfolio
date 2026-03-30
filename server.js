@@ -21,13 +21,17 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // ─── DATABASE CONNECTION ─────────────────────────────────
-const pool = new Pool({
-  host: "localhost",
-  user: "postgres",
-  password: "123",
-  database: "portfolio_db1",
-  port: 5432
-});
+const pool = new Pool(
+  process.env.DATABASE_URL
+    ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
+    : {
+        host: process.env.DB_HOST || "localhost",
+        user: process.env.DB_USER || "postgres",
+        password: process.env.DB_PASSWORD || "123",
+        database: process.env.DB_NAME || "portfolio_db1",
+        port: process.env.DB_PORT || 5432
+      }
+);
 
 // ─── DATABASE INITIALIZATION ─────────────────────────────
 const initDB = async () => {
@@ -77,7 +81,8 @@ const initDB = async () => {
     `);
 
     // Create default admin
-    const password = await bcrypt.hash("admin123", 10);
+    // ⚠️ IMPORTANT: Change this password before production!
+    const password = await bcrypt.hash("9557b4e2bb2d94c9288580c97d6f68df", 10);
 
     await pool.query(`
       INSERT INTO admins (name,email,password_hash)

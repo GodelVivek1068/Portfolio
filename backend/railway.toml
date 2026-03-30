@@ -1,0 +1,12 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+numReplicas = 1
+startCommand = "node server.js"
+restartPolicyMaxRetries = 5
+
+[[services]]
+name = "backend"
+builder = "nixpacks"
+startCommand = "node server.js"

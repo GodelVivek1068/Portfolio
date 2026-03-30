@@ -2,6 +2,8 @@
 
 A full-stack portfolio application with a Node.js/Express backend and React frontend. Features project showcasing, skill management, GitHub integration, and a contact system.
 
+**Ready for deployment on Railway!** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for step-by-step instructions.
+
 ## Project Structure
 
 ```
@@ -20,6 +22,8 @@ portfolio/
 │   ├── schema.sql              # Database schema & seed data
 │   ├── server.js               # Main server file
 │   ├── .env.example            # Environment template
+│   ├── .env.production         # Production configuration
+│   ├── railway.toml            # Railway config
 │   └── README.md               # Backend documentation
 │
 ├── frontend/                   # React portfolio website
@@ -27,15 +31,23 @@ portfolio/
 │   ├── pages/                  # Page components
 │   ├── styles/                 # CSS files
 │   ├── portfolio.jsx           # Main component
+│   ├── .env.production         # Production configuration
+│   ├── railway.toml            # Railway config
 │   └── README.md               # Frontend documentation
 │
 ├── package.json                # Node.js dependencies
 ├── .env.example                # Global environment template
 ├── .gitignore                  # Git ignore rules
+├── Procfile                    # Process file for Railway
+├── railway.json                # Root Railway config
+├── DEPLOYMENT_GUIDE.md         # 📚 Detailed deployment instructions
+├── DEPLOYMENT_SUMMARY.md       # 🚀 Quick deployment summary
+├── deploy.sh                   # Setup script (Linux/Mac)
+├── deploy.bat                  # Setup script (Windows)
 └── README.md                   # This file
 ```
 
-## Quick Start
+## Quick Start (Development)
 
 ### Prerequisites
 - Node.js >= 14
@@ -77,6 +89,28 @@ npm run dev
 
 Frontend runs on `http://localhost:5173`
 
+## 🚀 Deployment
+
+### Railway Deployment (Recommended)
+
+This project is configured for easy deployment to Railway with PostgreSQL.
+
+**Quick Start:**
+1. See [DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md) for quick checklist
+2. See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions
+
+**Key Files:**
+- `railway.json` - Root Railway configuration
+- `backend/railway.toml` - Backend Railway config
+- `frontend/railway.toml` - Frontend Railway config
+- `backend/.env.production` - Backend production variables template
+- `frontend/.env.production` - Frontend production variables template
+
+**Prerequisites:**
+- GitHub account with code pushed
+- Railway account (free tier available)
+- Generated JWT secret (use: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`)
+
 ## Technology Stack
 
 ### Backend
@@ -85,12 +119,14 @@ Frontend runs on `http://localhost:5173`
 - **Database:** PostgreSQL
 - **Authentication:** JWT with bcrypt
 - **Security:** Helmet, CORS, Rate limiting
+- **Deployment:** Railway
 
 ### Frontend
 - **Framework:** React 18+
+- **Build Tool:** Vite
 - **State:** React Hooks
 - **Styling:** CSS
-- **HTTP:** Fetch API
+- **Deployment:** Vercel or Railway
 
 ## API Endpoints
 

@@ -9,6 +9,8 @@ yarn.lock
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production.secrets.txt
+*.secrets.txt
 
 # Build outputs
 /dist

@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+
+[deploy]
+numReplicas = 1
+startCommand = "npm run preview"
+restartPolicyMaxRetries = 5

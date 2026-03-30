@@ -2,7 +2,14 @@
 
 ## 🎉 Your portfolio project is ready to deploy!
 
-I've prepared everything you need to deploy to **Railway** (backend + database) and **Vercel** (frontend).
+I've prepared everything you need to deploy to **Google Cloud Platform** (backend + frontend).
+
+### 📌 Platform Information
+
+**You chose: Google Cloud Platform**
+- Backend: Cloud Run (serverless containers)
+- Frontend: Firebase Hosting
+- Database: Cloud SQL (PostgreSQL)
 
 ---
 

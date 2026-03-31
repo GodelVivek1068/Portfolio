@@ -5,11 +5,6 @@ const rateLimit = require("express-rate-limit");
 require("dotenv").config();
 
 // Import modules
-const pool = require("./config/database");
-const authRoutes = require("./routes/auth");
-const projectsRoutes = require("./routes/projects");
-const skillsRoutes = require("./routes/skills");
-const contactRoutes = require("./routes/contact");
 const githubRoutes = require("./routes/github");
 
 const app = express();
@@ -28,10 +23,6 @@ app.get("/api/health", (req, res) => {
 });
 
 // ─── API ROUTES ──────────────────────────────────────────────────────────────
-app.use("/api/auth", authRoutes);
-app.use("/api/projects", projectsRoutes);
-app.use("/api/skills", skillsRoutes);
-app.use("/api/contact", contactRoutes);
 app.use("/api/github", githubRoutes);
 
 // ─── ERROR HANDLING ──────────────────────────────────────────────────────────

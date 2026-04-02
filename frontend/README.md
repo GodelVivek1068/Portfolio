@@ -25,7 +25,6 @@ frontend/
 - **Project Showcase** - Display of featured projects with links
 - **Skills Section** - Technical skills organized by category
 - **GitHub Integration** - Real-time GitHub repositories
-- **Contact Form** - Message submission to admin
 - **Responsive Design** - Mobile-friendly layout
 - **Dark/Light Theme** - Theme switching capability
 

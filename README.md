@@ -1,6 +1,6 @@
 # 🚀 Portfolio — Full-Stack Application
 
-A professional portfolio application with a modular React frontend and scalable Express.js backend powered by PostgreSQL.
+A professional portfolio application with a modular React frontend and scalable Express.js backend.
 
 ---
 
@@ -9,8 +9,6 @@ A professional portfolio application with a modular React frontend and scalable 
 ```
 portfolio/
 ├── backend/                        # Express.js REST API
-│   ├── config/
-│   │   └── database.js             # PostgreSQL connection pool
 │   ├── middleware/
 │   │   └── auth.js                 # JWT authentication middleware
 │   ├── routes/
@@ -19,7 +17,6 @@ portfolio/
 │   │   ├── skills.js               # GET skills
 │   │   ├── contact.js              # POST/GET contact messages
 │   │   └── github.js               # GET GitHub repositories
-│   ├── schema.sql                  # Database schema & seed data
 │   ├── server.js                   # Main entry point
 │   ├── .env.example                # Environment variables template
 │   ├── package.json
@@ -45,7 +42,6 @@ portfolio/
 
 ### Prerequisites
 - Node.js >= 14
-- PostgreSQL >= 12
 - npm or yarn
 
 ---
@@ -72,22 +68,10 @@ portfolio/
 
 ---
 
-## 🗄️ Database Schema
-
-```
-admins      → id, name, email, password_hash, created_at
-projects    → id, title, description, tech_stack[], github_url, live_url, image_url, featured, stars, created_at, updated_at
-skills      → id, name, category, level (0-100), icon, created_at
-contacts    → id, name, email, message, read, created_at
-```
-
----
-
 ## 🛠️ Tech Stack
 
 **Backend:**
 - Node.js & Express.js
-- PostgreSQL with pg driver
 - JWT authentication with bcryptjs
 - Helmet, CORS, Rate limiting
 
@@ -98,7 +82,6 @@ contacts    → id, name, email, message, read, created_at
 
 **Infrastructure:**
 - Environment-based configuration
-- PostgreSQL database with indexes
 - Rate limiting (15min windows, 100 requests/IP)
 
 ---
@@ -131,7 +114,6 @@ contacts    → id, name, email, message, read, created_at
 
 ### Backend (.env)
 ```
-DATABASE_URL=postgresql://user:password@localhost:5432/portfolio_db
 JWT_SECRET=your_secret_key_change_in_production
 CLIENT_URL=http://localhost:5173
 PORT=5000

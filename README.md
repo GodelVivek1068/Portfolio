@@ -245,6 +245,16 @@ This project is your personal portfolio. Customize and deploy as needed!
 ### Frontend Options
 - Vercel, Netlify, AWS S3 + CloudFront, GitHub Pages
 
+### Netlify (Frontend)
+
+This repository uses a dedicated Netlify config file: `netlify.toml`.
+
+- **Base directory:** `frontend`
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+
+If Netlify shows text like **"Merge remote changes and keep updated README"**, that is the commit message being deployed, not the actual build error. Open the failed deploy log to see the real error lines.
+
 ---
 
 ## 📝 Environment Variables
